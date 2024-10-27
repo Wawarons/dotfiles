@@ -1,0 +1,31 @@
+{
+    "label" : "lock",
+    "action" : : "swaylock --config ~/.config/swaylock/config",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+      "action" : "kitty && ~/.config/wlogout/hibernate.sh" 
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "sleep1; hyprctl dispatch exit",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+

@@ -2,52 +2,43 @@
   border: none;
   border-radius: 0px;
   font-family: JetBrainsMono Nerd Font;
-  font-size: 11px;
+  font-size: 12px;
   font-style: normal;
   min-height: 0;
 }
 
 
-
 window#waybar {
-  background: rgba(26, 0, 14, .5);
   color: #f4d9e1;
+  background: none;
 }
 
-.modules-right,
 #workspaces {
-  margin: 0 2px;
-  padding: 2px;
-}
-
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: transparent;
-  color: #FFFFFF;
-  transition: 0s;
+  padding: 0 2px;
+  background: #ffffff;
+  border-radius: 15px;
 }
 
 #workspaces button {
-  padding: 0px 5px;
-  border-radius: 16px;
   color: #5b5b5b;
 }
 
 #workspaces button.active {
   color: #FA864B;
-  border-radius: 16px;
 }
 
-#custom-date,
-#clock,
-#battery,
-#pulseaudio,
+#tech {
+  color: #FA864B;
+  background: #FFFFFF;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
 #network,
-#custom-launcher {
-  background: transparent;
-  margin: 5px 5px 5px 5px;
-  padding: 0 5px;
+#battery,
+#pulseaudio {
+  padding: 0 10px;
+  color: #FA864B;
 }
 
 #custom-date {
@@ -55,25 +46,21 @@ window#waybar {
 }
 
 #custom-power {
-  color: #24283b;
-  background-color: #db4b4b;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 0px;
-  padding: 5px 10px;
+  color: #FFFFFF;
+  margin: 0 10px 0 0;
+
+}
+
+#custom-power:hover {
+  color: #ff0a4b;
+  transition: .5s;
 }
 
 #clock {
-  color: #E6B9C6;
-  padding-left: 13px;
-  padding-right: 15px;
-  margin-right: 0px;
-  margin-left: 10px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  /*border-left: solid 1px #282738;*/
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 15px;
+  border-radius: 15px;
 }
 
 
@@ -81,34 +68,20 @@ window#waybar {
   color: #FA864B;
 }
 
+#battery.good {
+  color: green;
+}
+
 #battery.charging {
   color: #FA864B;
 }
 
 #battery.warning:not(.charging) {
-  background-color: #f7768e;
-  color: #24283b;
-  border-radius: 5px 5px 5px 5px;
-}
-
-
-#network {
-  color: #f4d9e1;
-  border-radius: 8px;
-  margin-right: 5px;
-}
-
-#pulseaudio {
-  color: #f4d9e1;
-  border-radius: 8px;
-  margin-left: 0px;
+  color: #f7768e;
 }
 
 #pulseaudio.muted {
-  background: transparent;
   color: #928374;
-  border-radius: 8px;
-  margin-left: 0px;
 }
 
 .icon-playerctl {
@@ -137,10 +110,4 @@ window#waybar {
   margin-bottom: 5px;
   font-weight: normal;
   font-style: normal;
-}
-
-#custom-wf-recorder {
-  padding: 0 20px;
-  color: #e5809e;
-  background-color: #1E1E2E;
 }

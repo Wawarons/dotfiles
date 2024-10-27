@@ -2,25 +2,31 @@
   "position": "top",
   "layer": "top",
   "height": 28,
-  "margin-top": 0,
+  "margin-top": 5,
   "margin-bottom": 0,
-  "margin-left": 0,
-  "margin-right": 0,
+  "margin-left": 2,
+  "margin-right": 2,
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces"
   ],
   "modules-center": [
     "custom/playerctl",
+    "clock",
     "custom/playerlabel"
   ],
   "modules-right": [
-    "network",
-    "battery",
-    "pulseaudio",
-    "clock"
+    "group/tech",
+    "custom/power"
   ],
-  // Modules configuration
+  "group/tech": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "battery",
+      "pulseaudio"
+    ]
+  }, // Modules configuration
   "clock": {
     "format": "{:%H:%M}",
     "tooltip": "true",
@@ -53,6 +59,11 @@
       "Paused": "<span foreground='#928374'>󰏥 </span>"
     }
   },
+  "custom/power": {
+    "format": "{icon}",
+    "on-click": "wlogout",
+    "format-icons": "⏻"
+  },
   "custom/playerlabel": {
     "format": "{}",
     "return-type": "json",
@@ -72,12 +83,11 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}  {capacity}%",
+    "format": "{icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
-    "format-alt": "{icon} {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+    "format-alt": "{icon} {capacity}%",
+    "format-good": "{icon}", // An empty format will hide the module
     "format-icons": [
       "",
       "",
@@ -94,7 +104,8 @@
     "on-click-right": "nm-connection-editor"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}",
+    "format-alt": "{icon} {volume}%",
     "format-muted": "󰝟",
     "format-icons": {
       "default": [
